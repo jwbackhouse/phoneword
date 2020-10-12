@@ -11,11 +11,8 @@ const scroll = ref => window.scrollTo(0, ref.current.offsetTop);
 const Converter = ({ setWords, words }) => {
   const [errorMsg, setErrorMsg] = useState('');
   const ref = useRef(null);
-  console.log(!!words || !!errorMsg);
-  console.log('start', words, errorMsg)
 
   const executeScroll = () => {
-    console.log('scrolling')
     scroll(ref);
   };
 
@@ -31,8 +28,6 @@ const Converter = ({ setWords, words }) => {
         }
 
         executeScroll();
-        console.log(!!words || !!errorMsg)
-        console.log('getResult', words, errorMsg)
       })
       .catch(err => console.log(err));
   };
@@ -44,7 +39,9 @@ const Converter = ({ setWords, words }) => {
         <p className='subtitle'>Find the letter combinations from your mobile keypad</p>
       </header>
       <InputForm getResult={ getResult }/>
-      { (words.data.length > 0 || errorMsg) && <Results refValue={ ref } errorMsg={ errorMsg } results={ words }/> }
+      { (words.data.length > 0 || errorMsg)
+        && <Results refValue={ ref } errorMsg={ errorMsg } results={ words }/>
+      }
     </div>
   );
 };
