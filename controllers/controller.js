@@ -4,23 +4,28 @@ exports.converter = (req, res) => {
 
   if (input.length === 0) res.send({ error: 'Please try again.' });
 
-  let init = map[input[1]].split('');
+  let init = map[input[0]].split('');
   let output = [];
-  let i = 1;
 
-  for (i; i < input.length; i++) {
+  for (let i = 1; i < input.length; i++) {
     output = [];
     let letters = map[input[i]];
 
-    // Handle numbers 0 & 1
+    // Handle 'empty numbers' (0 & 1)
     if (letters === '') {
       continue;
     }
 
-    for (let initStr of init) {
-      console.log('inner loop')
+    // Handle leading 'empty numbers'
+    if (init.length === 0) {
       for (let letter of letters) {
-        output.push(initStr + letter);
+        output.push(letter);
+      }
+    } else {
+      for (let initStr of init) {
+        for (let letter of letters) {
+          output.push(initStr + letter);
+        }
       }
     }
 
