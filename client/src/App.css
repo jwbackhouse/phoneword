@@ -14,130 +14,112 @@
 header {
   background: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
+  position: sticky;
+  top: 0;
 }
 
-*:focus {
-	 outline: none;
+input {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
 }
-/* body {*/
-/*	 font-family: 'Open Sans', sans-serif;*/
-/*	 font-size: 14px;*/
-/*}*/
 
- input {
-	 font-size: 20px;
-	 color: gray;
-	 font-weight: 700;
+input:focus {
+  outline: none;
 }
- .number-input {
-	 border: 0;
-	 border-radius: 10px;
-	 height: 55px;
-	 line-height: 55px;
-	 margin-bottom: 30px;
-	 padding: 0 20px;
-	 text-align: center;
-	 width: 71%;
 
-	 -webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
-	 -moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
-	 box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+.number-input {
+  border: 0;
+  border-radius: 10px;
+  height: 55px;
+  line-height: 55px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  text-align: center;
+  width: 71%;
+
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+  box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
 }
- .wrapper {
-   box-sizing: border-box;
-	 width: 100%;
+
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
 }
- .wrapper .phone {
-	 width: 300px;
-	 margin: 40px auto 0 auto;
-	 position: relative;
+
+.wrapper .phone {
+  width: 300px;
+  margin: 40px auto 0 auto;
+  position: relative;
 }
- .wrapper .phone span.title {
-	 font-weight: 700;
-	 letter-spacing: 2px;
-	 display: block;
-	 text-align: center;
+
+.wrapper .phone .phone-container {
+  background: #808080;
+  border-radius: 1rem;
+  margin-top: 30px;
+  padding-top: 30px;
+  width: 100%;
 }
- .wrapper .phone .phone-container {
-	 background: gray;
-	 border-radius: 1rem;
-	 margin-top: 30px;
-	 padding-top: 30px;
-	 width: 100%;
+
+.wrapper .phone .phone-container .keyboard {
+  width: 90%;
+  margin-left: 5%;
 }
- .wrapper .phone .phone-container .keyboard {
-	 width: 90%;
-	 margin-left: 5%;
-	 /*margin-top: 40px;*/
+
+.wrapper .phone .phone-container .keyboard .number {
+  width: 100%;
+  font-size: 0;
+  text-align: center;
 }
- .wrapper .phone .phone-container .keyboard .number {
-	 width: 100%;
-	 font-size: 0;
-	 text-align: center;
+
+.wrapper .phone .phone-container .keyboard .number.align-right {
+  text-align: right;
+  width: 100%;
 }
- .wrapper .phone .phone-container .keyboard .number.align-right {
-	 text-align: right;
-	 width: 100%;
+
+.wrapper .phone .phone-container .keyboard .number span {
+  font-size: 24px;
+  color: #808080;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  margin-bottom: 25px;
 }
- .wrapper .phone .phone-container .keyboard .number span {
-	 font-size: 24px;
-	 color: gray;
-	 display: inline-block;
-	 width: 33%;
-	 text-align: center;
-	 margin-bottom: 25px;
+
+.wrapper .phone .phone-container .keyboard .number span i {
+  background: #36CDCE;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  transition: 250ms;
+  width: 70px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+  box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
 }
- .wrapper .phone .phone-container .keyboard .number span i {
-	 background: #36cdce;
-	 display: inline-block;
-	 width: 70px;
-	 height: 70px;
-	 line-height: 70px;
-	 background: light-gray;
-	 cursor: pointer;
-	 border-radius: 100%;
-	 transition: 250ms;
-	 -webkit-touch-callout: none;
-	 -webkit-user-select: none;
-	 -khtml-user-select: none;
-	 -moz-user-select: none;
-	 -ms-user-select: none;
-	 user-select: none;
-	 -webkit-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
-	 -moz-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
-	 box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+
+.wrapper .phone .phone-container .keyboard .number span i.hero {
+  background: #F787D8;
 }
- .wrapper .phone .phone-container .keyboard .number span i.hero {
-	 background: #f787d8;
-	 /*box-shadow: 0 0 0 0;*/
-	 /*-webkit-box-shadow: 0 0 0 0;*/
-	 /*-moz-box-shadow: 0 0 0 0;*/
-	 /*-ms-box-shadow: 0 0 0 0;*/
-	 /*color: #e4bf88;*/
+
+.wrapper .phone .phone-container .keyboard .number span:hover i {
+  color: #000;
 }
- .wrapper .phone .phone-container .keyboard .number span i.delete img {
-	 display: inline-block;
-	 vertical-align: middle;
-}
- .wrapper .phone .phone-container .keyboard .number span:hover i {
-	 color: black;
-}
- .wrapper .phone .phone-container .keyboard .number span:active i {
-	 transform: translateY(1px);
-	 -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
-	 -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
-	 box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
-}
- .wrapper .phone .phone-container .keyboard .number span:active i.delete {
-	 box-shadow: 0 0 0 0;
-	 -webkit-box-shadow: 0 0 0 0;
-	 -moz-box-shadow: 0 0 0 0;
-	 -ms-box-shadow: 0 0 0 0;
-	 transform: translateY(0px);
-}
- .wrapper .phone .phone-container .keyboard .number span:active i.delete img {
-	 transtiion: 250ms;
-}
- .wrapper .phone .phone-container .keyboard .number span:active i.delete:active img {
-	 transform: translateY(2px);
+
+.wrapper .phone .phone-container .keyboard .number span:active i {
+  transform: translateY(1px);
+  -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
+  -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+  box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
 }
