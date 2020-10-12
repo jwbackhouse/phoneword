@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import wordsReducer from '../reducers/words.js';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    words: wordsReducer,
   },
 });
