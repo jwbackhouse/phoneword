@@ -1,3 +1,8 @@
+li {
+  list-style-type: none;
+}
+
+
 .App {
   box-sizing: border-box;
   text-align: center;
@@ -8,13 +13,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
+/* InputForm */
 header {
   background: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
-  position: sticky;
+  /*position: sticky;*/
   top: 0;
 }
 
@@ -79,12 +85,12 @@ input:focus {
 }
 
 .wrapper .phone .phone-container .keyboard .number span {
-  font-size: 24px;
   color: #808080;
   display: inline-block;
-  width: 33%;
+  font-size: 24px;
+  margin-bottom: 10px;
   text-align: center;
-  margin-bottom: 25px;
+  width: 33%;
 }
 
 .wrapper .phone .phone-container .keyboard .number span i {
@@ -122,4 +128,25 @@ input:focus {
   -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
   -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
   box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+}
+
+
+/* Results */
+.Results {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.word-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  flex-wrap: wrap;
+}
+
+.word {
+  background: #F5E13E;
+  margin: 5px;
+  padding: 0.5rem 0;
+  width: 80px;
 }

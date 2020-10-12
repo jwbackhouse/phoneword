@@ -1,14 +1,17 @@
 import React from 'react';
 
 const Results = ({ errorMsg, results }) => (
-  <div>
-    { (!errorMsg && results.data.length > 0) && <h4>Here are your letter combinations</h4> }
+  <div className='Results'>
+    <div className='result-heading'>
+      { (!errorMsg && results.data.length > 0) && <h4>Here are your letter combinations</h4> }
 
-    { errorMsg && <p className='error'>{ errorMsg }</p> }
-
-    { results.data.map(res => {
-        return (<p>{ res }</p>);
-    })}
+      { errorMsg && <p className='error'>{ errorMsg }</p> }
+    </div>
+    <ul className='word-list'>
+      { results.data.map(res => {
+          return (<li className='word'>{ res }</li>);
+      })}
+    </ul>
  </div>
 );
 
