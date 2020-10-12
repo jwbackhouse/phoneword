@@ -1,7 +1,6 @@
 import React from 'react';
-// import Converter from './components/Converter.js';
 import AppRouter from './routers/router.js';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
