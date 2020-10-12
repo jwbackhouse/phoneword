@@ -1,6 +1,6 @@
 exports.converter = (req, res) => {
   const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
-  const input = req.body.input.toString();
+  const input = req.body.input;
 
   if (input.length === 0) res.send({ error: 'Please try again.' });
 
@@ -18,6 +18,7 @@ exports.converter = (req, res) => {
     }
 
     for (let initStr of init) {
+      console.log('inner loop')
       for (let letter of letters) {
         output.push(initStr + letter);
       }
