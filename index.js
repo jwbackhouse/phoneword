@@ -2,8 +2,7 @@ const express = require('express');
 const router = require('./src/routers/router.js');
 
 const app = express();
-// const port = process.env.PORT || 3000;
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 // Handle CORS issues
 app.use(express.json());
