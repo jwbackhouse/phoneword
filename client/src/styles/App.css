@@ -8,7 +8,7 @@ html {
 }
 
 .background {
-  background-image: url("./media/background.jpg");
+  background-image: url("../media/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,11 +16,21 @@ html {
   padding-top: 1rem;
 }
 
+.text-box {
+  background: rgba(74, 74, 74, 0.8);
+  border-radius: 1rem;
+  color: #FFF;
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 70%
+  ;
+}
+
 /* InputForm */
 header {
   background: linear-gradient(#FFF, rgba(255, 255, 255, 0.7));
+  margin-top: -1rem;
   padding: 0.5rem 0;
-  top: 0;
 }
 
 input {
