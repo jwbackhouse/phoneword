@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import setWords from '../actions/words.js';
@@ -6,17 +6,28 @@ import InputForm from './InputForm.js';
 import Results from './Results.js';
 
 const Converter = ({ setWords, words }) => {
+  const [errorMsg, setErrorMsg] = useState('');
+
   const getResult = query => {
     axios.post('/convert', { input: query })
-      .then(res => setWords(res.data))
+      .then(res => {
+        if (res.data.length === 0) {
+          setErrorMsg('Nothing to see here');
+          setWords([]);
+        } else {
+          setWords(res.data);
+          setErrorMsg('');
+        }
+      })
       .catch(err => console.log(err));
   };
 
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className='Converter'>
+      <h1>Greetings from the 1990s</h1>
+      <p className='subtitle'>Find the letter combinations from your mobile keypad.</p>
       <InputForm getResult={ getResult }/>
-      <Results results={ words }/>
+      { <Results errorMsg={ errorMsg } results={ words }/> }
     </div>
   );
 };
