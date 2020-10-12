@@ -33,7 +33,7 @@ const Converter = ({ setWords, words }) => {
   };
 
   return (
-    <div className='Converter'>
+    <div className='background'>
       <header>
         <h1>Greetings from the 1990s</h1>
         <p className='subtitle'>Find the letter combinations from your mobile keypad</p>

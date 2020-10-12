@@ -7,12 +7,13 @@ html {
   text-align: center;
 }
 
-.Converter {
+.background {
   background-image: url("./media/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  padding-top: 1rem;
 }
 
 /* InputForm */
@@ -135,7 +136,7 @@ input:focus {
 
 
 /* Results */
-.Results {
+.results {
   background: rgba(255, 255, 255, 0.9);
   margin-top: 1rem;
   padding-top: 0.25rem;

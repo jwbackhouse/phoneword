@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Results = ({ errorMsg, results, refValue }) => (
-  <div ref={ refValue } className='Results'>
+  <div ref={ refValue } className='results'>
     <div>
       { (!errorMsg && results.data.length > 0) && <h4>Here are all the possible combinations</h4> }
 
