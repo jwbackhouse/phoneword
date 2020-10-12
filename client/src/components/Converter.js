@@ -19,7 +19,7 @@ const Converter = ({ setWords, words }) => {
   };
 
   const getResult = query => {
-    axios.post('/convert', { input: query })
+    axios.post('/convert', { input: query, timeout: 4000, })
       .then(res => {
         if (res.data.length === 0) {
           setErrorMsg('Nothing to see here');
