@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Results = ({ errorMsg, results }) => (
-  <div className='Results'>
+const Results = ({ errorMsg, results, refValue }) => (
+  <div ref={ refValue } className='Results'>
     <div className='result-heading'>
       { (!errorMsg && results.data.length > 0) && <h4>Here are your letter combinations</h4> }
 

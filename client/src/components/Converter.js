@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import setWords from '../actions/words.js';
 import InputForm from './InputForm.js';
 import Results from './Results.js';
 
+// Scroll to result words
+const scroll = ref => window.scrollTo(0, ref.current.offsetTop);
+
 const Converter = ({ setWords, words }) => {
   const [errorMsg, setErrorMsg] = useState('');
+  const ref = useRef(null);
+
+  const executeScroll = () => {
+    console.log('scrolling')
+    scroll(ref);
+  };
 
   const getResult = query => {
     axios.post('/convert', { input: query })
@@ -18,6 +27,9 @@ const Converter = ({ setWords, words }) => {
           setWords(res.data);
           setErrorMsg('');
         }
+
+        executeScroll();
+
       })
       .catch(err => console.log(err));
   };
@@ -29,7 +41,7 @@ const Converter = ({ setWords, words }) => {
         <p className='subtitle'>Find the letter combinations from your mobile keypad</p>
       </header>
       <InputForm getResult={ getResult }/>
-      { <Results errorMsg={ errorMsg } results={ words }/> }
+      <Results refValue={ ref } errorMsg={ errorMsg } results={ words }/>
     </div>
   );
 };
