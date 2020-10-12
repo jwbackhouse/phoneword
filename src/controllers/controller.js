@@ -1,8 +1,14 @@
+const { validationResult } = require('express-validator');
+
 exports.converter = (req, res) => {
+  // Handle errors from express-validator
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
   const input = req.body.input;
-
-  if (input.length === 0) res.send({ error: 'Please try again.' });
 
   let init = map[input[0]].split('');
   let output = [];
