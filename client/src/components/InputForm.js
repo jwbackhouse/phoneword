@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const InputForm = ({ getResult }) => {
   const [input, setInput] = useState('');
+
   const handleChange = e => {
     // Restrict input to numbers only
     const char = e.target.value;
@@ -11,27 +12,55 @@ const InputForm = ({ getResult }) => {
     setInput(e.target.value);
   };
 
+  const handleClick = value => {
+    setInput(input + value);
+  };
+
+  const handleDelete = () => {
+    setInput(input.substr(0, input.length - 1))
+  }
+
   const handleSubmit = e => {
-    e.preventDefault();
+    // e.preventDefault();
 
     if (input !== '') getResult(input);
     setInput('');
   };
 
   return (
-    <form onSubmit={ handleSubmit } >
-      <input
-        className='input'
-        name='numbers'
-        type='text'
-        value={ input }
-        onChange={ handleChange }
-        autoFocus
-      />
-      <button type='submit'>
-        Go
-      </button>
-    </form>
+    <div className='wrapper'>
+      <div className='phone'>
+        <div className='phone-container'>
+          <div className='keyboard'>
+            <div className='number'>
+              <span onClick={ handleClick.bind(this,1) }><i>1</i></span>
+              <span onClick={ handleClick.bind(this,2) }><i>2</i></span>
+              <span onClick={ handleClick.bind(this,3) }><i>3</i></span>
+              <span onClick={ handleClick.bind(this,4) }><i>4</i></span>
+              <span onClick={ handleClick.bind(this,5) }><i>5</i></span>
+              <span onClick={ handleClick.bind(this,6) }><i>6</i></span>
+              <span onClick={ handleClick.bind(this,7) }><i>7</i></span>
+              <span onClick={ handleClick.bind(this,8) }><i>8</i></span>
+              <span onClick={ handleClick.bind(this,9) }><i>9</i></span>
+            </div>
+
+            <div className='number align-right'>
+              <span onClick={ handleDelete.bind(this) }><i className='delete'>Delete</i></span>
+              <span onClick={ handleClick.bind(this,0) }><i>0</i></span>
+              <span onClick={ handleSubmit.bind(this) }><i>GO</i></span>
+            </div>
+          </div>
+
+          <input
+            type='text'
+            className='number-input'
+            id='numberInput'
+            value={ input }
+            onChange={ handleChange }
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
