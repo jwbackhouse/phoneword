@@ -17,14 +17,12 @@ li {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /*height: 100vh;*/
 }
 
 /* InputForm */
 header {
   background: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
-  /*position: sticky;*/
   top: 0;
 }
 
@@ -59,9 +57,9 @@ input:focus {
 }
 
 .wrapper .phone {
-  width: 300px;
   margin: 40px auto 0 auto;
   position: relative;
+  width: 300px;
 }
 
 .wrapper .phone .phone-container {
@@ -78,9 +76,9 @@ input:focus {
 }
 
 .wrapper .phone .phone-container .keyboard .number {
-  width: 100%;
   font-size: 0;
   text-align: center;
+  width: 100%;
 }
 
 .wrapper .phone .phone-container .keyboard .number.align-right {
@@ -141,10 +139,8 @@ input:focus {
 }
 
 .word-list {
-  align-items: center;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-  max-height: 90vh;
   flex-wrap: wrap;
 }
 
