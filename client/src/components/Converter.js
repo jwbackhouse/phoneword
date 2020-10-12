@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import setWords from '../actions/words.js';
+import Header from './Header.js';
+import Footer from './Footer.js';
 import InputForm from './InputForm.js';
 import Results from './Results.js';
 
@@ -34,14 +36,12 @@ const Converter = ({ setWords, words }) => {
 
   return (
     <div className='background'>
-      <header>
-        <h1>Greetings from the 1990s</h1>
-        <p className='subtitle'>Find the letter combinations from your mobile keypad</p>
-      </header>
+      <Header />
       <InputForm getResult={ getResult }/>
       { (words.data.length > 0 || errorMsg)
         && <Results refValue={ ref } errorMsg={ errorMsg } results={ words }/>
       }
+      <Footer />
     </div>
   );
 };

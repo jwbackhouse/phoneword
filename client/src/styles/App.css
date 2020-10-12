@@ -26,12 +26,26 @@ html {
   ;
 }
 
-/* InputForm */
+
+/* Header */
 header {
   background: linear-gradient(#FFF, rgba(255, 255, 255, 0.7));
   margin-top: -1rem;
   padding: 0.5rem 0;
 }
+
+
+/* Footer */
+footer {
+  background: #FFF;
+  bottom: 0;
+  color: #808080;
+  font-size: 0.75rem;
+  position: fixed;
+  width: 100%;
+}
+
+/* InputForm */
 
 input {
   font-size: 1.25rem;
