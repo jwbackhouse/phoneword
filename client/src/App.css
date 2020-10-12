@@ -1,75 +1,54 @@
 .App {
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Converter {
+  background-image: url("./media/background2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+header {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
-}
-
-* {
-	 box-sizing: border-box;
-}
- *:focus {
+*:focus {
 	 outline: none;
 }
- body {
-	 font-family: 'Open Sans', sans-serif;
-	 font-size: 14px;
-}
+/* body {*/
+/*	 font-family: 'Open Sans', sans-serif;*/
+/*	 font-size: 14px;*/
+/*}*/
+
  input {
 	 font-size: 20px;
-	 color: #d1d1d1;
-	 font-weight: 400;
+	 color: gray;
+	 font-weight: 700;
 }
- input.number-input {
-	 width: 100%;
+ .number-input {
+	 border: 0;
+	 border-radius: 10px;
 	 height: 55px;
 	 line-height: 55px;
-	 text-align: center;
+	 margin-bottom: 30px;
 	 padding: 0 20px;
-	 border-radius: 10px;
-	 border: 0;
+	 text-align: center;
+	 width: 71%;
+
 	 -webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
 	 -moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
 	 box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
 }
  .wrapper {
+   box-sizing: border-box;
 	 width: 100%;
 }
  .wrapper .phone {
-	 width: 350px;
+	 width: 300px;
 	 margin: 40px auto 0 auto;
 	 position: relative;
 }
@@ -80,13 +59,16 @@
 	 text-align: center;
 }
  .wrapper .phone .phone-container {
-	 width: 100%;
+	 background: gray;
+	 border-radius: 1rem;
 	 margin-top: 30px;
+	 padding-top: 30px;
+	 width: 100%;
 }
  .wrapper .phone .phone-container .keyboard {
 	 width: 90%;
 	 margin-left: 5%;
-	 margin-top: 40px;
+	 /*margin-top: 40px;*/
 }
  .wrapper .phone .phone-container .keyboard .number {
 	 width: 100%;
@@ -99,29 +81,19 @@
 }
  .wrapper .phone .phone-container .keyboard .number span {
 	 font-size: 24px;
-	 color: #e4bf88;
+	 color: gray;
 	 display: inline-block;
 	 width: 33%;
 	 text-align: center;
 	 margin-bottom: 25px;
 }
- .wrapper .phone .phone-container .keyboard .number span.call-button {
-	 opacity: 0;
-	 transition: 250ms;
-}
- .wrapper .phone .phone-container .keyboard .number span.call-button.show {
-	 opacity: 1;
-}
- .wrapper .phone .phone-container .keyboard .number span.call-button img {
-	 display: inline-block;
-	 vertical-align: middle;
-}
  .wrapper .phone .phone-container .keyboard .number span i {
+	 background: #36cdce;
 	 display: inline-block;
-	 width: 80px;
-	 height: 80px;
-	 line-height: 80px;
-	 background: white;
+	 width: 70px;
+	 height: 70px;
+	 line-height: 70px;
+	 background: light-gray;
 	 cursor: pointer;
 	 border-radius: 100%;
 	 transition: 250ms;
@@ -135,13 +107,13 @@
 	 -moz-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
 	 box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
 }
- .wrapper .phone .phone-container .keyboard .number span i.delete {
-	 background: transparent;
-	 box-shadow: 0 0 0 0;
-	 -webkit-box-shadow: 0 0 0 0;
-	 -moz-box-shadow: 0 0 0 0;
-	 -ms-box-shadow: 0 0 0 0;
-	 color: #e4bf88;
+ .wrapper .phone .phone-container .keyboard .number span i.hero {
+	 background: #f787d8;
+	 /*box-shadow: 0 0 0 0;*/
+	 /*-webkit-box-shadow: 0 0 0 0;*/
+	 /*-moz-box-shadow: 0 0 0 0;*/
+	 /*-ms-box-shadow: 0 0 0 0;*/
+	 /*color: #e4bf88;*/
 }
  .wrapper .phone .phone-container .keyboard .number span i.delete img {
 	 display: inline-block;

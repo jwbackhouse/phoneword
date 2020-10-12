@@ -24,8 +24,10 @@ const Converter = ({ setWords, words }) => {
 
   return (
     <div className='Converter'>
-      <h1>Greetings from the 1990s</h1>
-      <p className='subtitle'>Find the letter combinations from your mobile keypad.</p>
+      <header>
+        <h1>Greetings from the 1990s</h1>
+        <p className='subtitle'>Find the letter combinations from your mobile keypad</p>
+      </header>
       <InputForm getResult={ getResult }/>
       { <Results errorMsg={ errorMsg } results={ words }/> }
     </div>

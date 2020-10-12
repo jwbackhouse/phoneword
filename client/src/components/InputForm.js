@@ -17,12 +17,10 @@ const InputForm = ({ getResult }) => {
   };
 
   const handleDelete = () => {
-    setInput(input.substr(0, input.length - 1))
-  }
+    setInput(input.slice(0, -1));
+  };
 
   const handleSubmit = e => {
-    // e.preventDefault();
-
     if (input !== '') getResult(input);
     setInput('');
   };
@@ -45,9 +43,9 @@ const InputForm = ({ getResult }) => {
             </div>
 
             <div className='number align-right'>
-              <span onClick={ handleDelete.bind(this) }><i className='delete'>Delete</i></span>
+              <span onClick={ handleDelete.bind(this) }><i className='hero'>Del</i></span>
               <span onClick={ handleClick.bind(this,0) }><i>0</i></span>
-              <span onClick={ handleSubmit.bind(this) }><i>GO</i></span>
+              <span onClick={ handleSubmit.bind(this) }><i className='hero'>GO</i></span>
             </div>
           </div>
 
