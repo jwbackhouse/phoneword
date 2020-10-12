@@ -14,7 +14,7 @@ const InputForm = ({ getResult }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    getResult(input);
+    if (input !== '') getResult(input);
     setInput('');
   };
 
@@ -26,6 +26,7 @@ const InputForm = ({ getResult }) => {
         type='text'
         value={ input }
         onChange={ handleChange }
+        autoFocus
       />
       <button type='submit'>
         Go
