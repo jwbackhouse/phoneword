@@ -1,5 +1,5 @@
 const initialState = {
-  isLoading: false,
+  // isLoading: false,
   data: [],
 };
 
@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_WORDS':
       return {
-        ...state,
+        // ...state,
         data: action.payload,
       };
     default:
