@@ -2,18 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
-li {
-  list-style-type: none;
-}
-
-
 .App {
   box-sizing: border-box;
   text-align: center;
 }
 
 .Converter {
-  background-image: url("./media/background2.jpg");
+  background-image: url("./media/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,13 +16,13 @@ li {
 
 /* InputForm */
 header {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px 0;
+  background: linear-gradient(#FFF, rgba(255, 255, 255, 0.7));
+  padding: 0.5rem 0;
   top: 0;
 }
 
 input {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #000;
   font-weight: 700;
 }
@@ -40,6 +35,9 @@ input:focus {
   border: 0;
   border-radius: 10px;
   height: 55px;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   line-height: 55px;
   margin-bottom: 30px;
   padding: 0 20px;
@@ -100,6 +98,9 @@ input:focus {
   border-radius: 100%;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   height: 70px;
   line-height: 70px;
   transition: 250ms;
@@ -136,6 +137,7 @@ input:focus {
 /* Results */
 .Results {
   background: rgba(255, 255, 255, 0.9);
+  padding-top: 0.5rem;
 }
 
 .word-list {
@@ -148,5 +150,11 @@ input:focus {
   background: #F5E13E;
   margin: 5px;
   padding: 0.5rem 0;
+  width: 80px;
+}
+
+.dummy-word {
+  height: 0 !important;
+  margin: 5px;
   width: 80px;
 }
