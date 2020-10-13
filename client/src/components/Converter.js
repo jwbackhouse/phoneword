@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { setWords } from '../actions/words.js';
+import { setWords, setWordsError } from '../actions/words.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import InputForm from './InputForm.js';
@@ -10,7 +10,7 @@ import Results from './Results.js';
 // Scroll to result words
 const scroll = ref => window.scrollTo(0, ref.current.offsetTop);
 
-const Converter = ({ setWords, words }) => {
+const Converter = ({ setWords, setWordsError, words }) => {
   const [warnMsg, setWarnMsg] = useState('');
   const ref = useRef(null);
 
@@ -31,15 +31,20 @@ const Converter = ({ setWords, words }) => {
 
         executeScroll();
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        setWordsError();
+        executeScroll();
+      });
   };
 
   let resultsEl = null;
-  if (words.data.length > 0 || warnMsg) {
+  if (words.data.length > 0 || warnMsg || words.error) {
     resultsEl = (
       <Results
         refValue={ ref }
         warnMsg={ warnMsg }
+        error={ words.error }
         results={ words }
       />
     );
@@ -61,6 +66,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setWords: result => dispatch(setWords(result)),
+  setWordsError: () => dispatch(setWordsError()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Converter);

@@ -1,6 +1,8 @@
-const setWords = result => ({
+export const setWords = result => ({
   type: 'SET_WORDS',
   payload: result,
 });
 
-export default setWords;
+export const setWordsError = () => ({
+  type: 'SET_WORDS_ERROR',
+});
