@@ -9,7 +9,7 @@ const Results = ({ errorMsg, results, refValue }) => (
     </div>
     <ul className='word-list'>
       { results.data.map(res => {
-          return (<li data-testid='wordEl' className='word'>{ res }</li>);
+          return (<li data-testid='wordEl' className='word' key={res}>{ res }</li>);
       })}
       { results.data.length > 8 && (
         <>
