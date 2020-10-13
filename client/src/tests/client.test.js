@@ -1,8 +1,20 @@
 import React from 'react';
 import axios from 'axios';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
 import { render, fireEvent, screen } from './test-utils.js';
 import '@testing-library/jest-dom/extend-expect';
 import Converter from '../components/Converter.js';
+
+// Mock axios requests
+const server = setupServer(
+  rest.get('/convert/23', (req, res, ctx) => {
+    return res(ctx.json({ data: ['abc', 'abd', 'ade'] }));
+  })
+);
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 
 describe('Default empty state', () => {
