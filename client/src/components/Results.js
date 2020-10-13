@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Results = ({ errorMsg, results, refValue }) => (
+const Results = ({ warnMsg, results, refValue }) => (
   <div ref={ refValue } className='results'>
     <div>
-      { (!errorMsg && results.data.length > 0) && <h4>Here are all the possible combinations</h4> }
+      { (!warnMsg && results.data.length > 0) && <h4>Here are all the possible combinations</h4> }
 
-      { errorMsg && <p className='error'>{ errorMsg }</p> }
+      { warnMsg && <p className='error'>{ warnMsg }</p> }
     </div>
     <ul className='word-list'>
       { results.data.map(res => {

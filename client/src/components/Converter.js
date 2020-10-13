@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import setWords from '../actions/words.js';
+import { setWords } from '../actions/words.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import InputForm from './InputForm.js';
@@ -11,7 +11,7 @@ import Results from './Results.js';
 const scroll = ref => window.scrollTo(0, ref.current.offsetTop);
 
 const Converter = ({ setWords, words }) => {
-  const [errorMsg, setErrorMsg] = useState('');
+  const [warnMsg, setWarnMsg] = useState('');
   const ref = useRef(null);
 
   const executeScroll = () => {
@@ -22,11 +22,11 @@ const Converter = ({ setWords, words }) => {
     axios.get(`/convert/${query}`, { timeout: 4000, })
       .then(res => {
         if (res.data.length === 0) {
-          setErrorMsg('Nothing to see here');
+          setWarnMsg('Nothing to see here');
           setWords([]);
         } else {
           setWords(res.data);
-          setErrorMsg('');
+          setWarnMsg('');
         }
 
         executeScroll();
@@ -34,13 +34,22 @@ const Converter = ({ setWords, words }) => {
       .catch(err => console.log(err));
   };
 
+  let resultsEl = null;
+  if (words.data.length > 0 || warnMsg) {
+    resultsEl = (
+      <Results
+        refValue={ ref }
+        warnMsg={ warnMsg }
+        results={ words }
+      />
+    );
+  }
+
   return (
     <div className='background'>
       <Header />
       <InputForm getResult={ getResult }/>
-      { (words.data.length > 0 || errorMsg)
-        && <Results refValue={ ref } errorMsg={ errorMsg } results={ words }/>
-      }
+      { resultsEl }
       <Footer />
     </div>
   );
