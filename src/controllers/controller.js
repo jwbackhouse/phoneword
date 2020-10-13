@@ -8,7 +8,7 @@ exports.converter = (req, res) => {
   }
 
   const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
-  const input = req.body.input;
+  const input = req.params.query;
 
   let init = map[input[0]].split('');
   let output = [];
