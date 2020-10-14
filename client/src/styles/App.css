@@ -88,13 +88,13 @@ input:focus {
   width: 100%;
 }
 
-.wrapper .phone {
+.phone {
   margin: 20px auto 0 auto;
   position: relative;
   width: 300px;
 }
 
-.wrapper .phone .phone-container {
+.phone-container {
   background: #808080;
   border-radius: 1rem;
   margin-top: 30px;
@@ -102,23 +102,23 @@ input:focus {
   width: 100%;
 }
 
-.wrapper .phone .phone-container .keyboard {
+.keyboard {
   width: 90%;
   margin-left: 5%;
 }
 
-.wrapper .phone .phone-container .keyboard .number {
+.number {
   font-size: 0;
   text-align: center;
   width: 100%;
 }
 
-.wrapper .phone .phone-container .keyboard .number.align-right {
+.number.align-right {
   text-align: right;
   width: 100%;
 }
 
-.wrapper .phone .phone-container .keyboard .number span {
+.number span {
   color: #808080;
   display: inline-block;
   font-size: 24px;
@@ -127,7 +127,7 @@ input:focus {
   width: 33%;
 }
 
-.wrapper .phone .phone-container .keyboard .number span i {
+.number span i {
   background: #36CDCE;
   border-radius: 100%;
   cursor: pointer;
@@ -152,15 +152,15 @@ input:focus {
   box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
 }
 
-.wrapper .phone .phone-container .keyboard .number span i.hero {
+.number span i.hero {
   background: #F787D8;
 }
 
-.wrapper .phone .phone-container .keyboard .number span:hover i {
+.number span:hover i {
   color: #000;
 }
 
-.wrapper .phone .phone-container .keyboard .number span:active i {
+.number span:active i {
   transform: translateY(1px);
   -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
   -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
