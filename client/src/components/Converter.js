@@ -14,6 +14,7 @@ const Converter = ({ setWords, setWordsError, words }) => {
   const [warnMsg, setWarnMsg] = useState('');
   const ref = useRef(null);
 
+  // Scroll to results
   const executeScroll = () => {
     scroll(ref);
   };
@@ -38,6 +39,7 @@ const Converter = ({ setWords, setWordsError, words }) => {
       });
   };
 
+  // Only render Results if it contains content
   let resultsEl = null;
   if (words.data.length > 0 || warnMsg || words.error) {
     resultsEl = (

@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import words from '../reducers/words.js';
 
+// Provide tested component within actual Redux store
 const render = (
   ui, {
     initialState,
