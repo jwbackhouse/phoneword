@@ -29,3 +29,7 @@ Run test scripts for React app.
 #### `npm eject`
 One-way operation to allow you to adjust the configuration and build tools.<br />
 See [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) for details.
+
+## Oustanding tasks
+1. Improve test coverage - Redux in particular
+2. Review performance of build
