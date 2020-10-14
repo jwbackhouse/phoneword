@@ -11,11 +11,8 @@ const Results = ({ warnMsg, results, refValue, error }) => (
       { results.data.map(res => {
           return (<li data-testid='wordEl' className='word' key={res}>{ res }</li>);
       })}
-      { results.data.length > 8 && (
+      { results.data.length > 11 && (
         <>
-          <li className='dummy-word'></li>
-          <li className='dummy-word'></li>
-          <li className='dummy-word'></li>
           <li className='dummy-word'></li>
           <li className='dummy-word'></li>
           <li className='dummy-word'></li>

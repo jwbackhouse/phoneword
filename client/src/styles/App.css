@@ -46,7 +46,6 @@ footer {
 }
 
 /* InputForm */
-
 input {
   font-size: 1.25rem;
   color: #000;
@@ -162,7 +161,8 @@ input:focus {
 /* Results */
 .results {
   background: rgba(255, 255, 255, 0.9);
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
+  max-width: 1000px;
   padding-top: 0.25rem;
 }
 
