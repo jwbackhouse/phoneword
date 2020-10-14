@@ -8,12 +8,12 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_WORDS':
       return {
-        ...state,
+        error: false,
         data: action.payload,
       };
     case 'SET_WORDS_ERROR':
       return {
-        ...state,
+        data: [],
         error: true,
       };
     default:
