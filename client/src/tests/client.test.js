@@ -82,4 +82,4 @@ describe('Test with mock server requests', () => {
     fireEvent.click(screen.getByTestId('submit'));
     expect(input.value).toBe('');
   });
-})
+});
