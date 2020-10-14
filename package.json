@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "start-watch": "nodemon index.js",
+    "test": "jest src/tests/server.test.js",
+    "test-watch": "jest --watch src/tests/server.test.js",
+    "start": "node start.js",
+    "start-watch": "nodemon start.js",
     "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
   },
   "keywords": [],
@@ -19,6 +20,9 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "axios": "^0.20.0",
+    "jest": "^26.5.3",
+    "nodemon": "^2.0.4",
+    "supertest": "^5.0.0"
   }
 }
