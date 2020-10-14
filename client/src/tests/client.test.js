@@ -1,9 +1,55 @@
 import React from 'react';
 import { rest } from 'msw';
+import store from '../store/store.js';
+import { setWords, setWordsError } from '../actions/words.js';
 import { setupServer } from 'msw/node';
 import { render, fireEvent, screen } from './test-utils.js';
 import '@testing-library/jest-dom/extend-expect';
 import Converter from '../components/Converter.js';
+
+
+// Basic Redux functionality testing
+describe('Basic Redux internals testing', () => {
+  // Include Thunk here for future-proofing
+  const thunk = ({ dispatch, getState }) => next => action => {
+    if (typeof action === 'function') {
+      return action(dispatch, getState);
+    }
+    return next(action);
+  };
+
+  const create = () => {
+    store.getState = jest.fn(() => ({}));
+    store.dispatch = jest.fn();
+
+    const next = jest.fn();
+
+    const invoke = action => thunk(store)(next)(action);
+
+    return { store, next, invoke };
+  };
+
+  test('Should pass through a non-function action', () => {
+    const { next, invoke } = create();
+    const action = { type: 'SET_WORDS' };
+    invoke(action);
+    expect(next).toHaveBeenCalledWith(action)
+  });
+
+  test('Should generate SET_WORDS action object', () => {
+    const result = ['de', 'df', 'dg'];
+    const expectedObj = {
+      type: 'SET_WORDS',
+      payload: ['de', 'df', 'dg']
+    };
+    expect(setWords(result)).toEqual(expectedObj);
+  });
+
+  test('Should generate SET_WORDS_ERROR action object', () => {
+    const expectedObj = { type: 'SET_WORDS_ERROR' };
+    expect(setWordsError()).toEqual(expectedObj);
+  });
+});
 
 describe('Default empty state', () => {
   let input;
@@ -67,10 +113,9 @@ describe('Test with mock server requests', () => {
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
 
-  test('Should clear input field on form submission', async() => {
-    const onSubmit = jest.fn();
+  test('Should clear input field on input submission', async() => {
     render(
-      <Converter onSubmit={onSubmit} />, {
+      <Converter />, {
         initialState: { words: { data: [] } }
       }
     );
@@ -78,8 +123,8 @@ describe('Test with mock server requests', () => {
     fireEvent.change(input, { target: { value: '23' } });
     expect(input.value).toBe('23');
 
-    await setTimeout(() => {}, 500);
     fireEvent.click(screen.getByTestId('submit'));
+    await setTimeout(() => {}, 500);
     expect(input.value).toBe('');
   });
 });
