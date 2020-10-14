@@ -22,12 +22,12 @@ html {
   color: #FFF;
   margin: 2rem auto;
   padding: 2rem;
-  width: 70%
-  ;
+  width: 70%;
 }
 
 
 /* Header */
+
 header {
   background: linear-gradient(#FFF, rgba(255, 255, 255, 0.7));
   margin-top: -1rem;
@@ -36,6 +36,7 @@ header {
 
 
 /* Footer */
+
 footer {
   background: #FFF;
   bottom: 0;
@@ -46,6 +47,7 @@ footer {
 }
 
 /* InputForm */
+
 input {
   font-size: 1.25rem;
   color: #000;
@@ -61,8 +63,8 @@ input:focus {
   border-radius: 10px;
   height: 55px;
   font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   line-height: 55px;
   margin-bottom: 30px;
   padding: 0 20px;
@@ -123,8 +125,8 @@ input:focus {
   cursor: pointer;
   display: inline-block;
   font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   height: 70px;
   line-height: 70px;
   transition: 250ms;
@@ -159,6 +161,7 @@ input:focus {
 
 
 /* Results */
+
 .results {
   background: rgba(255, 255, 255, 0.9);
   margin: 1rem auto 0 auto;
@@ -183,4 +186,21 @@ input:focus {
   height: 0 !important;
   margin: 5px;
   width: 80px;
+}
+
+
+/* Small screen */
+
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .phone {
+    margin-top: 15px;
+  }
 }
